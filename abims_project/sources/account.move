@@ -97,7 +97,7 @@ module abims_project::account_move {
         value: u64
     ): balance::Balance<sui::sui::SUI>{
         // Ensure the account has more than the requested value; otherwise, abort with error.
-        assert!(account.balance.value() > value, EInsufficientFunds);
+        assert!(account.balance.value() > value, EInsufficientFunds)
         // Split the specified value from the account's balance.
         account.balance.split(value)
     }

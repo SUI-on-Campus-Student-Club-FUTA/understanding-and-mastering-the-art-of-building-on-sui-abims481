@@ -114,7 +114,7 @@ module abims_project::bank {
         ctx: &mut TxContext
     ){
         // Ensure the sender's account has enough balance to withdraw the requested amount.
-        assert!(bank.accounts[ctx.sender()].get_balance_valuation() >= amount, EAmountExceedsBalance);
+        assert!(bank.accounts[ctx.sender()].get_balance_valuation() >= amount, EAmountExceedsBalance)
         // Split the requested amount from the sender's account balance.
         let amount_to_be_withdrawn = bank.accounts[ctx.sender()].get_balance_part(amount);
         // Convert the balance to a coin and transfer it to the sender.
